@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little URL</title>
+    <style>
+        .mainHeading{
+            color: rgb(127, 94, 24);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 56px;
+            text-align: center;
+        }
+        #form{
+            text-align: center;
+        }
+        #inputURL{
+            width: 75%;
+            height: 30px;
+            border: 2px solid rgb(94, 8, 8);
+        }
+        #submitButton{
+            margin-top: 20px;
+            width: 10%;
+            cursor:pointer;
+            background-color: beige;
+            color: rgb(26, 14, 102);
+            font-weight: bold;
+            border-radius: 10px;
+            height: 30px;
+            border: 2px solid black;
+        }
+        #submitButton:hover{
+            background-color: rgb(26, 154, 6);
+        }
+    </style>
+</head>
+<body>
+    <h1 class="mainHeading">Little URL</h1>
+    <form id="form" action="geturl/" method="POST">
+        <input type="text" id="inputURL" name="Original URL">
+        <br>
+        <input type="submit" id="submitButton" value="Submit">
+    </form>
+</body>
+</html>
