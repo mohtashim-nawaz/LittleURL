@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little URL</title>
+
+    <style>
+        .mainHeading{
+            color: rgb(127, 94, 24);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 56px;
+            text-align: center;
+        }
+        #linkHeading{
+            color: black;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+        }
+        #link{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 20px;
+            color: rgb(87, 43, 3);
+            text-align: center;
+        }
+        #link:hover{
+            color:brown;
+        }
+        #linkText{
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    <h1 class="mainHeading">Little URL</h1>
+    <p id="linkHeading">Your Little URL</p>
+    <a href = {{short_url}} id="link"><p id="linkText">{{short_url}}</p></a>
+</body>
+</html>

@@ -27,7 +27,10 @@ def createShortURL(request):
         current_obj = models.ShortURL.objects.filter(original_url=original_url)
         if len(current_obj)!=0:
             ret = DEFAULT_URL+current_obj[0].short_url
-            return HttpResponse("<a href="+ret+" target=_blank>"+ret+"</a>")
+            args = {}
+            args['short_url'] = ret
+            return render(request, 'shorturl.html', args)
+            #return HttpResponse("<a href="+ret+" target=_blank>"+ret+"</a>")
 
         random_char_list = list(string.ascii_letters)
         random_chars = ''
@@ -43,6 +46,9 @@ def createShortURL(request):
         newShortURL.save()
 
         ret = DEFAULT_URL+newShortURL.short_url
-        return HttpResponse("<a href="+ret+" target=_blank>"+ret+"</a>")
+        args = {}
+        args['short_url'] = ret
+        return render(request, 'shorturl.html', args)
+        #return HttpResponse("<a href="+ret+" target=_blank>"+ret+"</a>")
     else:
         return HttpResponseBadRequest("Bad Request")
