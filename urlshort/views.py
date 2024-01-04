@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpRequest, HttpResponse, HttpResponseNotFound, HttpResponseBadRequest
 from . import models
 from django.views.decorators.csrf import csrf_exempt
@@ -6,17 +6,18 @@ import random, string
 from datetime import datetime
 # Create your views here.
 
-DEFAULT_URL = "127.0.0.1:8000/"
+DEFAULT_URL = "http://127.0.0.1:8000/"
 
 def home(request):
     return render(request, 'home.html')
 
-def redirect(request, url):
+def my_redirect(request, url):
     current_obj = models.ShortURL.objects.filter(short_url=url)
     if len(current_obj)==0:
         return HttpResponseNotFound()
     ret = current_obj[0].original_url
-    return HttpResponse("<a href="+ret+" target=_blank>"+ret+"</a>")
+    return redirect(ret)
+    #return HttpResponse("<a href="+ret+" target=_blank>"+ret+"</a>")
    
 @csrf_exempt  
 def createShortURL(request):

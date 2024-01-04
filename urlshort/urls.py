@@ -3,6 +3,6 @@ from . import views
 
 urlpatterns = [
     path('', views.home),
-    path('<str:url>', views.redirect),
+    path('<str:url>', views.my_redirect),
     path('geturl/', views.createShortURL),
 ]
